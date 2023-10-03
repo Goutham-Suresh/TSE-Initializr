@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Project Generated</title>
+
+
+
+<!--	<link th:href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />-->
+
+<!--	<link th:href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />-->
+<!--	<link th:href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />-->
+
+<!--	<link th:href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />-->
+
+	<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body id="page-top">
+
+
+<header class="masthead">
+	<div class="container px-4 px-lg-5 h-100">
+		<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+			<div class="col-lg-8 align-self-end">
+				<h1 class="text-white font-weight-bold">Your Preferances!</h1>
+				<hr class="divider" />
+			</div>
+			<div class="col-lg-8 align-self-baseline">
+
+				<span class="text-white-75 mb-5"><b>Project  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.project}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Language  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.lang}"></span><br/>
+				<span class="text-white-75 mb-5"><b>SpringBoot  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.spring}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Dependencies  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.dependencies}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Group  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.group}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Artifact  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.artifact}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Name  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.name}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Description  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.description}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Package name  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.package_name}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Packaging  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.packaging}"></span><br/>
+				<span class="text-white-75 mb-5"><b>Java  :  </b></span><span class="text-white-75 mb-5" th:text="${detail.java}"></span><br/>
+				<a class="btn btn-primary btn-xl" href="http://localhost:8080/Download">Generate My Project!</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--	<meta charset="ISO-8859-1">-->
+<!--	<title>Registration Success</title>-->
+<!--	<style type="text/css">-->
+<!--	span {-->
+<!--		display: inline-block;-->
+<!--		width: 200px;-->
+<!--		text-align: left;-->
+<!--	}-->
+<!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div align="center">-->
+<!--	<h2>Registration Succeeded!</h2>-->
+<!--	<span>Project:</span><span th:text="${detail.project}"></span><br/>-->
+<!--	<span>Language:</span><span th:text="${detail.lang}"></span><br/>-->
+<!--	<span>SpringBoot:</span><span th:text="${detail.spring}"></span><br/>-->
+<!--	<span>Dependencies:</span><span th:text="${detail.dependencies}"></span><br/>-->
+<!--	<span>Group:</span><span th:text="${detail.group}"></span><br/>-->
+<!--	<span>Artifact:</span><span th:text="${detail.artifact}"></span><br/>-->
+<!--	<span>Name:</span><span th:text="${detail.name}"></span><br/>-->
+<!--	<span>Description:</span><span th:text="${detail.description}"></span><br/>-->
+<!--	<span>Package name:</span><span th:text="${detail.package_name}"></span><br/>-->
+<!--	<span>Packaging:</span><span th:text="${detail.packaging}"></span><br/>-->
+<!--	<span>Java:</span><span th:text="${detail.java}"></span><br/>-->
+<!--	<a href="http://localhost:8080/Download" >Click Here to Generate Project</a>-->
+
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

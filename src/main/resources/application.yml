@@ -1,0 +1,200 @@
+server:
+  port: 8090
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mavenDB
+      
+initializr:  
+  description:
+    description: Project description
+    title: Description
+    value: Demo spring project for Pudo team
+  artifact-id:
+    description: Artifact Id of the project
+    title: Artifact Id
+    value: demo
+  group-id:
+    value: com.telstra
+    description: Group id
+    title: Group id
+  version:
+    description: Project version
+    title: Version
+    value: 1.0.0-SNAPSHOT
+  
+  java-versions:
+    - id: 20
+      default: true
+    - id: 17
+      default: true
+    - id: 11
+      default: false
+    - id: 8
+      default: false
+    - id: 1.8
+      name: 1.8
+      default: false
+      
+  boot-versions:
+    - name: 3.1.2
+      id: 3.1.2
+      default: true 
+       
+  dependencies:
+      - name: Pudo
+        content:
+          - name: Pudo Api Project
+            id: pudo-api
+            groupId: com.telstra
+            artifactId: pudo-api-pseudo-dependency
+            version: 0
+            description: Pudo api project
+          - name: Pudo Acceptance Test Project
+            id: pudo-acceptance
+            groupId: com.telstra
+            artifactId: pudo-acceptance-test-pseudo-dependency
+            version: 0
+            description: Pudo acceptance test project
+      - name: Utilities
+        content:
+          - name: Mapstruct
+            id: mapstruct
+            groupId: org.mapstruct
+            artifactId: mapstruct
+            version: "1.5.3.Final"
+            description: Mapstruct object mapper library
+      - name: Web
+        content:
+          - name: Spring Web
+            id: web
+            description: Servlet web application with Spring MVC and Tomcat
+
+      - name: Data
+        content:
+          - name: Spring Data JPA
+            id: data-jpa
+            description: JPA (Java Persistence API) for data access using Spring Data
+
+      - name: Security
+        content:
+          - name: Spring Security
+            id: security
+            description: Authentication, authorization, and security features for applications
+
+      - name: Messaging
+        content:
+          - name: Spring for Apache Kafka
+            id: kafka
+            description: Integration with Apache Kafka for messaging and event-driven architectures
+
+      - name: Cache
+        content:
+          - name: Spring Cache
+            id: cache
+            description: Abstraction over caching libraries for improving performance
+
+      - name: Actuator
+        content:
+          - name: Spring Boot Actuator
+            id: actuator
+            description: Monitoring and managing Spring Boot applications
+
+      - name: Validation
+        content:
+          - name: Spring Validation
+            id: validation
+            description: Data validation using Spring's validation framework
+
+      - name: DevTools
+        content:
+          - name: Spring Boot DevTools
+            id: devtools
+            description: Developer tools for fast application restarts and more efficient development
+
+      - name: Test
+        content:
+          - name: Spring Boot Starter Test
+            id: test
+            description: Starter for testing Spring Boot applications
+
+      - name: Data Redis
+        content:
+          - name: Spring Data Redis
+            id: data-redis
+            description: Integration with Redis for caching and data storage
+
+      - name: Data MongoDB
+        content:
+          - name: Spring Data MongoDB
+            id: data-mongodb
+            description: Integration with MongoDB for data access
+
+#  - name: Data JDBC
+#    content:
+#      - name: Spring Data JDBC
+#        id: data-jdbc
+#        description: Simplified data access with JDBC and Spring Data
+#
+#  - name: Mail
+#    content:
+#      - name: Spring Mail
+#        id: mail
+#        description: Sending email using JavaMail and Spring Framework
+#
+#  - name: Task Scheduling
+#    content:
+#      - name: Spring Boot Starter Batch
+#        id: batch
+#        description: Starter for Spring Batch including HSQLDB
+#
+      - name: Web Services
+        content:
+          - name: Spring Web Services
+            id: web-services
+            description: Contract-first SOAP service using Spring Web Services
+
+      - name: AOP
+        content:
+          - name: Spring AOP
+            id: aop
+            description: Aspect-oriented programming support in Spring Framework
+        
+  languages:
+    - name: Java
+      id: java
+      default: true
+    - name: Kotlin
+      id: kotlin
+      default: false
+    - name: Groovy
+      id: groovy
+      default: false
+      
+  packagings:
+    - name: Jar
+      id: jar
+      default: true
+    - name: War
+      id: war
+      default: false
+  types:
+    - name: Maven Project
+      id: maven-project
+      description: Generate a Maven based project archive
+      tags:
+        build: maven
+        format: project
+      default: true
+      action: /starter.zip
+    - name: Gradle Project
+      id: gradle-project
+      description: Generate a Gradle based project archive
+      tags:
+        build: gradle
+        format: project
+      default: false
+      action: /starter.zip

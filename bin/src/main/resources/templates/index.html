@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/css/styling.css}" />
+	<title>TSE Initializr</title>
+	<script>
+      function autofill(){
+    var x = document.getElementById('artifact').value;
+    var y = document.getElementById('group').value;
+    var z= y+"."+x;
+    document.getElementById('name').value=x;
+    document.getElementById('package_name').value=z;
+    }
+    </script>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+
+<form class = "signup-form" action="#" th:action="@{/}" method="post" th:object="${detail}">
+
+	<div class = "form-header">
+		<h1>TSE INITIALIZER</h1>
+	</div>
+
+	<div class = "form-body">
+
+		<div class = "horizontal-group">
+			<div class = "form-group left">
+
+				<p><b class = "label-title">Project</b></p>
+				<p style="color: black;">
+					<input type="radio" th:field="*{project}" value="Maven" required ="required" /><b>Maven</b><br/>
+					<input type="radio" th:field="*{project}" value="Gradle" /><b>Gradle</b><br/>
+
+				</p>
+
+
+			</div>
+
+			<div class = "form-group right">
+				<p><b class = "label-title">Language</b></p>
+				<p style = 'color:black;'>
+					<input type="radio" th:field="*{lang}" value="java" required ="required" /><b>Java</b><br/>
+
+				</p>
+
+
+			</div>
+
+		</div>
+
+		<div class = "horizontal-group">
+			<div class = "form-group right">
+
+				<p><b class = "label-title">Spring Boot</b></p>
+				<p style="color: black;">
+					<input type="radio" th:field="*{spring}" value="3.0.0 SNAPSHOT" required ="required" /><b>3.0.0 (SNAPSHOT)</b><br/>
+					<input type="radio" th:field="*{spring}" value="3.0.0 M4" /><b>3.0.0 (M4)</b><br/>
+					<input type="radio" th:field="*{spring}" value="2.7.4 SNAPSHOT" /><b>2.7.4 (SNAPSHOT)</b><br/>
+					<input type="radio" th:field="*{spring}" value="2.7.3" /><b>2.7.3</b><br/>
+					<input type="radio" th:field="*{spring}" value="2.6.12 SNAPSHOT" /><b>2.6.12 (SNAPSHOT)</b><br/>
+					<input type="radio" th:field="*{spring}" value="2.6.11" /><b>2.6.11</b><br/>
+
+				</p>
+
+
+			</div>
+
+			<div class = "form-group left">
+
+				<label class = "label-title">Choose Dependencies</label><br><br>
+				<p style="color: black;">
+					<select id="dependency" th:field="*{dependencies}" multiple="multiple">
+						<option th:each="dep: ${dependencies}"
+								th:value="${dep}" th:text="${dep}">
+					</select></br>
+				</p>
+
+
+			</div>
+		</div>
+
+		<div class = "form-group">
+
+			<p><b class = "label-title">Project metadata</b></p>
+			<label style="color:black;"><b>Group:</b></label><br/>
+			<input type="text" class = "form-input" th:field="*{group}" required ="required" /><br/>
+			<label style="color: black;"><b>Artifact:</b></label><br/>
+			<input type="text" oninput="autofill()" class = "form-input" th:field="*{artifact}" /><br/>
+			<label style = "color: black;"><b>Name:</b></label><br/>
+			<input type="text" class = "form-input" th:field="*{name}" /><br/>
+			<label style="color:black ;"><b>Description:</b></label><br/>
+			<input type="text" class = "form-input" th:field="*{description}" /><br/>
+			<label style="color: black;"><b>Package name:</b></label><br/>
+			<input type="text" class = "form-input" th:field="*{package_name}" /><br/>
+
+		</div>
+
+		<div class = "horizontal-group">
+			<div class ="form-group left">
+
+				<p><b class = "label-title">Packaging</b></p>
+				<p style="color:black ;">
+					<input type="radio" th:field="*{packaging}" value="Jar" required ="required" /><b>Jar</b>
+					<input type="radio" th:field="*{packaging}" value="War" /><b>War</b><br/>
+
+				</p>
+
+
+			</div>
+			<div class = "form-group right">
+
+				<p><b class = "label-title">Java</b></p>
+				<p style="color: black;">
+					<input type="radio" th:field="*{java}" value="18" required ="required" /><b>18</b>
+					<input type="radio" th:field="*{java}" value="17" /><b>17</b>
+					<input type="radio" th:field="*{java}" value="11" /><b>11</b>
+					<input type="radio" th:field="*{java}" value="1.8" /><b>8</b><br/>
+
+				</p>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class = "form-footer">
+		<button type="submit" class = "btn">Proceed</button>
+
+	</div>
+
+
+
+</form>
+
+
+
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--	<meta charset="utf-8" />-->
+<!--	<link rel="stylesheet" th:href="@{/css/mystyle.css}" />-->
+
+<!--	<title>TSE Initializer</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<noscript>You need to enable JavaScript to run this app.</noscript>-->
+<!--<div id="root"></div>-->
+
+<!--<form class = "signup-form" action="#" th:action="@{/Download}" method="post" th:object="${details}">-->
+
+<!--	<div class = "form-header">-->
+<!--		<h1>TSE Initializer</h1>-->
+<!--	</div>-->
+
+<!--	<div class = "form-body">-->
+
+<!--		<div class = "horizontal-group">-->
+<!--			<div class = "form-group left">-->
+
+<!--				<p><b class = "label-title">Project</b></p>-->
+<!--				<input type="radio" th:field="*{project}" value="Maven" required ="required"/>Maven<br/>-->
+<!--				<input type="radio" th:field="*{project}" value="Gradle" />Gradle<br/>-->
+
+<!--			</div>-->
+
+<!--			<div class = "form-group right">-->
+<!--				<p><b class = "label-title">Language</b></p>-->
+<!--				<input type="radio" th:field="*{lang}" value="java" required ="required" />Java<br/>-->
+
+<!--			</div>-->
+
+<!--		</div>-->
+
+<!--		<div class = "horizontal-group">-->
+<!--			<div class = "form-group right">-->
+
+<!--				<p><b class = "label-title">Spring Boot</b></p>-->
+<!--				<input type="radio" th:field="*{spring}" value="3.0.0 (SNAPSHOT)" required ="required"/>3.0.0 (SNAPSHOT)<br/>-->
+<!--				<input type="radio" th:field="*{spring}" value="3.0.0 (M4)" />3.0.0 (M4)<br/>-->
+<!--				<input type="radio" th:field="*{spring}" value="2.7.4 (SNAPSHOT)" />2.7.4 (SNAPSHOT)<br/>-->
+<!--				<input type="radio" th:field="*{spring}" value="2.7.3" />2.7.3<br/>-->
+<!--				<input type="radio" th:field="*{spring}" value="2.6.12 (SNAPSHOT)" />2.6.12 (SNAPSHOT)<br/>-->
+<!--				<input type="radio" th:field="*{spring}" value="2.6.11" />2.6.11<br/>-->
+
+<!--			</div>-->
+
+<!--			<div class = "form-group left">-->
+
+<!--				<label><b class = "label-title">Choose Dependencies </b></label><br><br>-->
+<!--				<select id="dependency" th:field="*{dependencies}" multiple="multiple">-->
+<!--					<option th:each="dep: ${dependencies}"-->
+<!--							th:value="${dep}" th:text="${dep}">-->
+<!--				</select></br>-->
+
+
+<!--			</div>-->
+<!--		</div>-->
+
+<!--		<div class = "form-group">-->
+
+<!--			<p><b class = "label-title">Project metadata</b></p>-->
+<!--			<label>Group:</label>-->
+<!--			<input type="text" class = "form-input" th:field="*{group}" required ="required"/><br/>-->
+<!--			<label>Artifact:</label>-->
+<!--			<input type="text" class = "form-input" th:field="*{artifact}" required ="required" /><br/>-->
+<!--			<label>Name:</label>-->
+<!--			<input type="text" class = "form-input" th:field="*{name}" required ="required" /><br/>-->
+<!--			<label>Description:</label>-->
+<!--			<input type="text" class = "form-input" th:field="*{description}" required ="required" /><br/>-->
+<!--			<label>Package name:</label>-->
+<!--			<input type="text" class = "form-input" th:field="*{package_name}" required ="required" /><br/>-->
+
+
+
+<!--		</div>-->
+
+<!--		<div class = "horizontal-group">-->
+<!--			<div class ="form-group left">-->
+
+<!--				<p><b class = "label-title">Packaging</b></p>-->
+<!--				<input type="radio" th:field="*{packaging}" value="Jar" required ="required" />Jar-->
+<!--				<input type="radio" th:field="*{packaging}" value="War" />War<br/>-->
+
+<!--			</div>-->
+<!--			<div class = "form-group right">-->
+
+<!--				<p><b class = "label-title">Java</b></p>-->
+<!--				<input type="radio" th:field="*{java}" value="18" required ="required" />18-->
+<!--				<input type="radio" th:field="*{java}" value="17" />17-->
+<!--				<input type="radio" th:field="*{java}" value="11" />11-->
+<!--				<input type="radio" th:field="*{java}" value="8" />8-->
+
+<!--			</div>-->
+<!--		</div>-->
+
+<!--	</div>-->
+
+<!--	<div class = "form-footer">-->
+<!--		<button type="submit" class = "btn">Proceed</button>-->
+
+<!--	</div>-->
+
+
+
+<!--</form>-->
+
+
+
+<!--&lt;!&ndash;-->
+<!--  This HTML file is a template.-->
+<!--  If you open it directly in the browser, you will see an empty page.-->
+
+<!--  You can add webfonts, meta tags, or analytics to this file.-->
+<!--  The build step will place the bundled scripts into the <body> tag.-->
+
+<!--  To begin the development, run `npm start` or `yarn start`.-->
+<!--  To create a production bundle, use `npm run build` or `yarn build`.-->
+<!--&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->
